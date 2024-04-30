@@ -1,0 +1,26 @@
+import os
+import sys
+import anndata as ad
+import pandas as pd
+import scanpy as sc
+import matplotlib.pyplot as plt
+
+sys.path.append('../utils_py')
+import misc_utils
+import plotting_utils
+
+data_dir = '../../../data/immune_ageing/HRA000203/'
+print(data_dir)
+
+out_dir = './out'
+print(out_dir)
+
+metadata = pd.read_csv(
+  os.path.join(data_dir, 'metadata.csv'),
+  sep=';'
+)
+
+combined_adata = misc_utils.load_combined(out_dir, all_samples)
+
+combined_adata = combined_adata[~combined_adata.obs.sample_name.isin(['YA06', 'AA01', 'AA02', 'AA06'])]
+combined_adata.write(os.path.join(out_dir, 'combined.h5ad'))
