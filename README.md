@@ -2,7 +2,7 @@
 
 Source code for the PBMC Ageing Atlas analysis that includes over a million cells from young and old donors and seven studies.
 
-<img width="800" alt="image" src="https://github.com/f6v/PBMC_ageing_atlas/assets/13019221/8f03e688-d20f-4b68-b09c-5b6086b7257f">
+<img width="750" alt="image" src="https://github.com/f6v/PBMC_ageing_atlas/assets/13019221/55eb7ce5-1772-4b24-8bf7-56e3e977d10a">
 
 
 ##### Data
