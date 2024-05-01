@@ -37,4 +37,6 @@ adata.raw = adata
 adata = adata[:,adata.var.highly_variable]
 sc.pp.scale(adata, max_value=10)
 
+sc.tl.pca(adata, svd_solver='arpack')
+
 run_integration(adata.copy(), args.output_dir)
