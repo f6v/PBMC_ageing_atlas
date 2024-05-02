@@ -5,16 +5,40 @@ Source code for the PBMC Ageing Atlas analysis that includes over a million cell
 <img width="750" alt="image" src="https://github.com/f6v/PBMC_ageing_atlas/assets/13019221/55eb7ce5-1772-4b24-8bf7-56e3e977d10a">
 
 
-##### Data
+### Data acquisition
 
 The datasets can be found under the following accessions on NCBI, GSA, and Synapse: GSE157007, GSE213516, GSE214546, HRA000203, HRA000624, HRA003766, syn22255433.
 
-##### Directory structure
+### Directory structure
 
-`GSE157007`, `GSE213516`, `GSE214546`, `HRA000203`, `HRA000624`, `HRA003766`, `syn22255433` contain scripts to combine the sample data for each study and perform the quality control.
+#### Dataset-specific folders
 
-`atlas` contains code for integrating the seven datasets and performing the downstream analyses.
+`GSE157007`, `GSE213516`, `GSE214546`, `HRA000203`, `HRA000624`, `HRA003766`, `syn22255433` contain scripts to combine the sample data for each study and perform the quality control. The scripts in each folder should be run in the following order:
+1. `create_adatas.py` to import the data into AnnData format.
+2. `doublets.R` to perform the doublet calls for each sample.
+3. `combine.py` to create a single AnnData file with all the samples and doublet calls for each dataset.
+4. `qc.py` to peform the quality control for each dataset.
+
+#### Combined atlas analysis
+
+`atlas` contains code for integrating the seven datasets and performing the downstream analyses. The scripts in each folder should be run in the following order:
+1. `combine_datasets.py` to create a single AnnData object for seven datasets.
+2. `prepare_combined.py` to peform the clean up, such as removing V(D)J genes.
+3. `integrate.py` to run scVI integration (preferably on a GPU).
+4. `viz_integrated.py` to perform additional QC (removing doublets and RBC contamination) and PBMC annotation.
+
+`T_integrate.py`, `B_integrate.py`, `MALAT1_integrate.py` perform the T, B, and MALAT1+ cell re-analysis, respectively.
+
+`celltypist_run.py` and `celltypist_viz.py` peform CellTypist classification for T cells.
+
+`scanpy_DE.py` peforms DE test between young and old individuals.
+
+
+
+#### T cell marker gene analysis
 
 `T_markers` - visualization of the T cell reference for validating marker genes.
+
+#### Utility functions
 
 `utils_py` - shared Python utilities.
