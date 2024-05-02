@@ -29,10 +29,15 @@ The datasets can be found under the following accessions on NCBI, GSA, and Synap
 
 `T_integrate.py`, `B_integrate.py`, `MALAT1_integrate.py` perform the T, B, and MALAT1+ cell re-analysis, respectively.
 
-`celltypist_run.py` and `celltypist_viz.py` peform CellTypist classification for T cells.
+`celltypist_run.py` and `celltypist_viz.py` perform CellTypist classification for T cells.
 
-`scanpy_DE.py` peforms DE test between young and old individuals.
+`scanpy_DE.py` performs DE test between young and old individuals.
 
+`cell_type_props_plots.R` plots of cell type proportions in the datasets.
+
+`harmony_integrate.py`, `harmony_cluster.py` - alternative integration with Harmony.
+
+`abundance_heatmap.R` - cell type proportions heatmap in each sample and dataset.
 
 
 #### T cell marker gene analysis
