@@ -9,6 +9,10 @@ Source code for the PBMC Ageing Atlas analysis that includes over a million cell
 
 The datasets can be found under the following accessions on NCBI, GSA, and Synapse: GSE157007, GSE213516, GSE214546, HRA000203, HRA000624, HRA003766, syn22255433.
 
+### Resource requirements
+
+Please note that `scVI` scripts run much faster on GPU. 
+
 ### Directory structure
 
 #### Dataset-specific folders
@@ -47,3 +51,7 @@ The datasets can be found under the following accessions on NCBI, GSA, and Synap
 #### Utility functions
 
 `utils_py` - shared Python utilities.
+
+### Acknowledgements
+
+This study was supported by the funding from the European Union's Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No.: 955321, as well by Estonian Research Council grant PRG2011. This publication is based upon work partially supported by the Google Cloud Research Credits program award No.: GCP19980904.
